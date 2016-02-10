@@ -1,0 +1,28 @@
+<%= form_for(@menu) do |f| %>
+  <% if @menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+
+      <ul>
+      <% @menu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= image_tag menu.avatar.url(:medium), class: "img-responsive" %>
+
+   <div class="form-group">
+    <%= f.text_field :item, class: "form-control", placeholder: "Menu Item" %>
+  </div>
+ <div class="form-group">
+    <%= f.text_area :description, class: "form-control", :rows => 10, placeholder: "Description" %>
+  </div>
+  <div class="form-group">
+    <%= f.number_field :price, class: "form-control", placeholder: "Price" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
