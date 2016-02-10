@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+
+<% if menu.avatar_file_name != nil %>
+   <%= image_tag destination.avatar.url(:medium), class: "img-responsive" %>
+<% end %>
 <p>
   <strong>Item:</strong>
   <%= @menu.item %>

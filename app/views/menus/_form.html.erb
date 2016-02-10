@@ -11,7 +11,9 @@
     </div>
   <% end %>
 
-  <%= image_tag menu.avatar.url(:medium), class: "img-responsive" %>
+<% if destination.avatar_file_name != nil %>
+   <%= image_tag menu.avatar.url(:medium), class: "img-responsive" %>
+<% end %>>
 
    <div class="form-group">
     <%= f.text_field :item, class: "form-control", placeholder: "Menu Item" %>
